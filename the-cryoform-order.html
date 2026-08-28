@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Cryoform Order | Scura Dragonverse</title>
+    <style>
+        .sdv-order-container {
+            --accent: #00f2ff;
+            --glass: rgba(5, 15, 25, 0.9);
+            --faint-border: rgba(0, 242, 255, 0.12);
+            font-family: 'Courier New', monospace;
+            color: #fff;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 10;
+        }
+        .blueprint-header {
+            border: 1px solid var(--accent);
+            padding: 30px;
+            background: var(--glass);
+            margin-bottom: 30px;
+        }
+        .blueprint-header h1 {
+            letter-spacing: 8px;
+            margin: 0;
+            color: var(--accent);
+            text-transform: uppercase;
+        }
+        .diagnostic-line {
+            font-size: 10px;
+            border-top: 1px solid var(--faint-border);
+            margin-top: 15px;
+            padding-top: 8px;
+            color: var(--accent);
+            letter-spacing: 2px;
+            opacity: 0.7;
+        }
+        .upper-layout {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        .genomic-trace {
+            border-left: 3px solid var(--accent);
+            padding-left: 20px;
+        }
+        .genomic-heading {
+            color: var(--accent);
+            letter-spacing: 3px;
+            margin-top: 0;
+        }
+        .genomic-trace p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #d1d1e0;
+        }
+        .side-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .cell-box {
+            border: 1px solid var(--accent);
+            padding: 5px;
+            background: #000;
+            text-align: center;
+        }
+        .cell-box img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        .cell-box span {
+            font-size: 10px;
+            color: var(--accent);
+            font-weight: bold;
+            letter-spacing: 2px;
+            display: block;
+            margin: 5px 0;
+        }
+        .retract-btn {
+            border: 1px solid var(--accent);
+            padding: 12px;
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 10px;
+            text-align: center;
+            background: rgba(0, 242, 255, 0.05);
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+        .retract-btn:hover {
+            background: var(--accent);
+            color: #000;
+            box-shadow: 0 0 25px var(--accent);
+        }
+        .blueprint-divider {
+            display: flex;
+            align-items: center;
+            margin: 40px 0;
+            opacity: 0.4;
+        }
+        .div-line {
+            flex-grow: 1;
+            height: 1px;
+            background: var(--accent);
+        }
+        .div-hub {
+            width: 20px;
+            height: 20px;
+            border: 1px solid var(--accent);
+            border-radius: 50%;
+            margin: 0 20px;
+        }
+        .main-gallery-frame {
+            border: 1px solid var(--faint-border);
+            padding: 10px;
+            background: var(--glass);
+            margin-bottom: 40px;
+        }
+        .main-gallery-frame img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            display: block;
+        }
+        .sample-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        .sample-card {
+            border: 1px solid var(--faint-border);
+            padding: 15px;
+            background: var(--glass);
+            text-align: center;
+            transition: 0.4s;
+        }
+        .sample-card:hover {
+            border-color: var(--accent);
+            box-shadow: 0 0 35px rgba(0, 242, 255, 0.3);
+            transform: translateY(-5px);
+        }
+        .sample-img-wrap {
+            height: 260px;
+            overflow: hidden;
+            margin-bottom: 15px;
+            border: 1px solid #333;
+        }
+        .sample-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .sample-meta {
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 12px;
+            letter-spacing: 2px;
+        }
+        .sample-desc {
+            font-size: 10px;
+            color: rgba(209, 209, 224, 0.8);
+            margin-top: 10px;
+            font-style: italic;
+            line-height: 1.5;
+        }
+        @media (max-width: 768px) {
+            .upper-layout, .sample-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div id="cryoform-manifest" class="sdv-order-container">
+
+    <header class="blueprint-header">
+        <h1>THE CRYOFORM ORDER</h1>
+        <div class="diagnostic-line">DIAGNOSTIC: ABSOLUTE ZERO // THERMAL: STABLE // STATUS: FROZEN</div>
+    </header>
+
+    <div class="upper-layout">
+        <div class="genomic-trace">
+            <h3 class="genomic-heading">[ GENOMIC TRACE ]</h3>
+            <p>The Cryoform lineage originates from the deep glacial shelves. Their DNA is fused with liquid nitrogen-based silicates, allowing for thermal regulation at near absolute zero temperatures.</p>
+        </div>
+        <div class="side-stack">
+            <div class="cell-box">
+                <img src="/images/cryoform-cell.jpg" alt="The Cell">
+                <span>THE CELL</span>
+            </div>
+            <a href="/" class="retract-btn">← RETRACT TO MASTER CORE</a>
+        </div>
+    </div>
+
+    <div class="blueprint-divider">
+        <div class="div-line"></div>
+        <div class="div-hub"></div>
+        <div class="div-line"></div>
+    </div>
+
+    <div class="main-gallery-frame">
+        <img src="/images/cryoform-main.jpg" alt="Cryoform Main">
+    </div>
+
+    <div class="sample-grid">
+        <div class="sample-card">
+            <div class="sample-img-wrap"><img src="/images/cryoform-glacial-core.jpg" alt="Glacial Core"></div>
+            <div class="sample-meta">[ CRYO_SAMPLE_01 // GLACIAL_CORE ]</div>
+            <div class="sample-desc">"Core temperature measured at -270°C. Structural integrity maintained by sub-zero pressure."</div>
+        </div>
+        <div class="sample-card">
+            <div class="sample-img-wrap"><img src="/images/cryoform-permafrost.jpg" alt="Permafrost Vein"></div>
+            <div class="sample-meta">[ CRYO_SAMPLE_02 // PERMAFROST_VEIN ]</div>
+            <div class="sample-desc">"Blood circulation replaced by liquid nitrogen flow. Capable of instant flash-freezing."</div>
+        </div>
+        <div class="sample-card">
+            <div class="sample-img-wrap"><img src="/images/cryoform-arctic-storm.jpg" alt="Arctic Storm"></div>
+            <div class="sample-meta">[ CRYO_SAMPLE_03 // ARCTIC_STORM ]</div>
+            <div class="sample-desc">"Wings generate localized blizzards. Visual tracking becomes impossible during flight."</div>
+        </div>
+        <div class="sample-card">
+            <div class="sample-img-wrap"><img src="/images/cryoform-borealis-ghost.jpg" alt="Borealis Ghost"></div>
+            <div class="sample-meta">[ CRYO_SAMPLE_04 // BOREALIS_GHOST ]</div>
+            <div class="sample-desc">"Scale pigmentation reacts to magnetic fields, creating aurora-like light patterns."</div>
+        </div>
+        <div class="sample-card">
+            <div class="sample-img-wrap"><img src="/images/cryoform-tundra-stalker.jpg" alt="Tundra Stalker"></div>
+            <div class="sample-meta">[ CRYO_SAMPLE_05 // TUNDRA_STALKER ]</div>
+            <div class="sample-desc">"Adapted for low-light hunting. Eyes can detect heat signatures from 5 miles away."</div>
+        </div>
+        <div class="sample-card">
+            <div class="sample-img-wrap"><img src="/images/cryoform-frost-bite.jpg" alt="Frost Bite"></div>
+            <div class="sample-meta">[ CRYO_SAMPLE_06 // FROST_BITE ]</div>
+            <div class="sample-desc">"Jaw pressure capable of crushing reinforced steel. Saliva crystallizes on contact."</div>
+        </div>
+        <div class="sample-card">
+            <div class="sample-img-wrap"><img src="/images/cryoform-ice-shard.jpg" alt="Ice Shard"></div>
+            <div class="sample-meta">[ CRYO_SAMPLE_07 // ICE_SHARD ]</div>
+            <div class="sample-desc">"Tail spines are composed of organic ice-diamond. Harder than volcanic obsidian."</div>
+        </div>
+        <div class="sample-card">
+            <div class="sample-img-wrap"><img src="/images/cryoform-zero-prime.jpg" alt="Zero Prime"></div>
+            <div class="sample-meta">[ CRYO_SAMPLE_08 // ZERO_PRIME ]</div>
+            <div class="sample-desc">"The Apex of the northern wastes. Presence alone lowers ambient temperature by 40 degrees."</div>
+        </div>
+    </div>
+</div>
+
+<canvas id="cryo-frost" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 1;"></canvas>
+<script>
+(function() {
+    const canvas = document.getElementById('cryo-frost');
+    const ctx = canvas.getContext('2d');
+    let shards = [];
+    function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+    class Shard {
+        constructor() { this.init(); }
+        init() {
+            this.x = Math.random() * canvas.width;
+            this.y = -20;
+            this.size = Math.random() * 2 + 0.5;
+            this.speedY = Math.random() * 2 + 1.5;
+            this.speedX = (Math.random() - 0.5) * 1.5;
+            this.opacity = Math.random() * 0.4 + 0.2;
+        }
+        update() {
+            this.y += this.speedY; this.x += this.speedX;
+            if (this.y > canvas.height + 20) this.init();
+        }
+        draw() {
+            ctx.fillStyle = `rgba(220, 245, 255, ${this.opacity})`;
+            ctx.beginPath();
+            ctx.moveTo(this.x, this.y);
+            ctx.lineTo(this.x + this.size, this.y + this.size * 2);
+            ctx.lineTo(this.x - this.size, this.y + this.size * 2);
+            ctx.closePath();
+            ctx.fill();
+        }
+    }
+    window.addEventListener('resize', resize);
+    resize();
+    for(let i = 0; i < 60; i++) shards.push(new Shard());
+    function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        shards.forEach(s => { s.update(); s.draw(); });
+        requestAnimationFrame(animate);
+    }
+    animate();
+})();
+</script>
+
+</body>
+</html>
