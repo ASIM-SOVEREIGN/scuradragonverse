@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scura Dragonverse | Biological Archive</title>
+    <style>
+        #sdv-frontpage {
+            --bio-red: #cc0000;
+            --glass-panel: rgba(10, 10, 15, 0.45);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --text-primary: #f5f5f7;
+            position: relative;
+            padding: 2rem 0;
+            color: var(--text-primary);
+            font-family: 'Courier New', monospace;
+            background: transparent;
+            width: 100%;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        /* WATERMARK - only dragonverse branding */
+        #sdv-frontpage::after {
+            content: "SCURA_BIOLOGICAL_DATA_PROTOCOL_v2.4.2";
+            position: fixed;
+            bottom: 50%;
+            right: -130px;
+            transform: rotate(-90deg);
+            font-size: 9px;
+            letter-spacing: 4px;
+            opacity: 0.15;
+            color: #fff;
+            z-index: 100;
+            pointer-events: none;
+            white-space: nowrap;
+        }
+        @media (max-width: 600px) {
+            #sdv-frontpage::after { display: none; }
+        }
+
+        .sdv-group {
+            position: relative;
+            z-index: 2;
+            max-width: 1100px;
+            margin: 0 auto 2.5rem;
+            background: var(--glass-panel);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+            padding: 2.5rem;
+            text-align: left;
+        }
+
+        .sdv-header-block {
+            border-left: 2px solid var(--bio-red);
+            padding-left: 20px;
+            margin-bottom: 25px;
+        }
+
+        .sdv-title { 
+            font-size: clamp(1.6rem, 5vw, 2.4rem); 
+            letter-spacing: 7px; 
+            text-transform: uppercase; 
+            margin: 0; 
+            color: #fff;
+        }
+
+        .sdv-subtitle { 
+            font-size: 0.85rem; 
+            color: #d1d1d1; 
+            margin-top: 10px; 
+            max-width: 600px; 
+            line-height: 1.6;
+            opacity: 0.7;
+        }
+
+        .sdv-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 22px;
+            border: 1px solid var(--glass-border);
+            background: rgba(255,255,255,0.03);
+            color: #fff !important;
+            text-decoration: none !important;
+            font-size: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: 0.2s ease;
+            cursor: pointer;
+        }
+        .sdv-btn:hover {
+            border-color: var(--bio-red);
+            background: rgba(204, 0, 0, 0.1);
+        }
+        .sdv-btn-small {
+            width: 100%;
+            padding: 5px 0;
+            font-size: 8px;
+        }
+
+        .sdv-btn-sovereign {
+            border-color: #00ff41;
+            background: rgba(0, 255, 65, 0.05);
+            color: #00ff41 !important;
+        }
+        .sdv-btn-sovereign:hover {
+            border-color: #00ff41;
+            background: rgba(0, 255, 65, 0.15);
+            box-shadow: 0 0 15px rgba(0, 255, 65, 0.3);
+        }
+
+        .sdv-grid { 
+            display: grid; 
+            gap: 1.5rem; 
+            grid-template-columns: repeat(3, 1fr); 
+            width: 100%; 
+            margin-top: 2rem;
+        }
+        @media (max-width: 950px) { .sdv-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 550px) { .sdv-grid { grid-template-columns: 1fr; } }
+
+        .sdv-card {
+            border: 1px solid var(--glass-border);
+            background: rgba(0, 0, 0, 0.2);
+            transition: 0.3s ease;
+            position: relative;
+        }
+        .sdv-card:hover { border-color: rgba(255,255,255,0.2); }
+
+        .sdv-card[data-order="pyroclast"] { border-top: 2px solid #ff4500; }
+        .sdv-card[data-order="chronos-flux"] { border-top: 2px solid #a349eb; }
+        .sdv-card[data-order="cryoform"] { border-top: 2px solid #00f2ff; }
+        .sdv-card[data-order="titanborne"] { border-top: 2px solid #4ade80; }
+        .sdv-card[data-order="myrkwyrm"] { border-top: 2px solid #8e9196; }
+        .sdv-card[data-order="chem-sovereign"] { border-top: 2px solid #39ff14; }
+
+        .img-wrap { 
+            width: 100%; 
+            height: 220px; 
+            overflow: hidden; 
+            background: #000; 
+            border-bottom: 1px solid var(--glass-border);
+        }
+        .sdv-card img { width: 100%; height: 100%; object-fit: cover; opacity: 0.7; transition: 0.3s; }
+        .sdv-card:hover img { opacity: 1; }
+
+        .card-label { padding: 15px; text-align: center; }
+        .card-label h3 { font-size: 10px; letter-spacing: 3px; margin: 0 0 12px 0; color: #fff; }
+
+        .sdv-reveal { opacity: 0; transform: translateY(15px); transition: 0.8s ease-out; }
+        .sdv-visible { opacity: 1 !important; transform: translateY(0) !important; }
+
+        .artifacts-grid {
+            display: grid;
+            gap: 1.5rem;
+            grid-template-columns: repeat(4, 1fr);
+            width: 100%;
+        }
+        @media (max-width: 650px) {
+            .artifacts-grid { grid-template-columns: 1fr; }
+        }
+        .artifacts-grid .sdv-card { border: none; }
+        .artifacts-grid img { height: 140px; width: 100%; object-fit: cover; }
+
+        .section-heading {
+            font-size: 11px;
+            letter-spacing: 4px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            color: var(--bio-red);
+            font-weight: normal;
+        }
+        .section-heading-gold { color: #c5a059; }
+
+        .access-note {
+            margin-top: 15px;
+            padding: 12px;
+            background: rgba(0, 255, 65, 0.03);
+            border-left: 2px solid #00ff41;
+            font-size: 10px;
+            color: #aaffaa;
+            line-height: 1.6;
+        }
+        .access-note a {
+            color: #00ff41;
+            text-decoration: none;
+            border-bottom: 1px dashed #00ff41;
+        }
+        .access-note a:hover {
+            text-shadow: 0 0 8px #00ff41;
+        }
+        .note-small {
+            display: block;
+            margin-top: 8px;
+            font-size: 8px;
+            color: #666;
+            letter-spacing: 1px;
+        }
+        .sovereign-badge {
+            display: inline-block;
+            background: #00ff41;
+            color: black;
+            font-size: 7px;
+            padding: 2px 6px;
+            border-radius: 10px;
+            margin-left: 8px;
+            letter-spacing: 1px;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+
+<div id="sdv-frontpage">
+
+    <!-- HEADER -->
+    <section class="sdv-group sdv-reveal">
+        <div class="sdv-header-block">
+            <h1 class="sdv-title">SCURA_DRAGONVERSE</h1>
+            <p class="sdv-subtitle">The biological archive of six mythic orders. Documenting the evolution of dragon-kind across elemental realms.</p>
+        </div>
+        <a href="/specifications.html" class="sdv-btn">ACCESS_SPECS</a>
+    </section>
+
+    <!-- PHYLOGENETIC DIRECTORY -->
+    <section class="sdv-group sdv-reveal">
+        <h2 class="section-heading">// PHYLOGENETIC_DIRECTORY</h2>
+        <div class="sdv-grid">
+            <!-- PYROCLAST -->
+            <div class="sdv-card" data-order="pyroclast">
+                <div class="img-wrap"><img src="/images/pyroclast.jpg" alt="Pyroclast specimen"></div>
+                <div class="card-label">
+                    <h3>PYROCLAST</h3>
+                    <a href="/the-pyroclast-order.html" class="sdv-btn sdv-btn-small">VIEW_SPECIMEN</a>
+                </div>
+            </div>
+            <!-- CHRONOS-FLUX -->
+            <div class="sdv-card" data-order="chronos-flux">
+                <div class="img-wrap"><img src="/images/chronos-flux.jpg" alt="Chronos-Flux specimen"></div>
+                <div class="card-label">
+                    <h3>CHRONOS-FLUX</h3>
+                    <a href="/the-chronos-flux-order.html" class="sdv-btn sdv-btn-small">VIEW_SPECIMEN</a>
+                </div>
+            </div>
+            <!-- CRYOFORM -->
+            <div class="sdv-card" data-order="cryoform">
+                <div class="img-wrap"><img src="/images/cryoform.jpg" alt="Cryoform specimen"></div>
+                <div class="card-label">
+                    <h3>CRYOFORM</h3>
+                    <a href="/the-cryoform-order.html" class="sdv-btn sdv-btn-small">VIEW_SPECIMEN</a>
+                </div>
+            </div>
+            <!-- TITANBORNE -->
+            <div class="sdv-card" data-order="titanborne">
+                <div class="img-wrap"><img src="/images/titanborne.jpg" alt="Titanborne specimen"></div>
+                <div class="card-label">
+                    <h3>TITANBORNE</h3>
+                    <a href="/the-titanborne-order.html" class="sdv-btn sdv-btn-small">VIEW_SPECIMEN</a>
+                </div>
+            </div>
+            <!-- MYRKWYRM -->
+            <div class="sdv-card" data-order="myrkwyrm">
+                <div class="img-wrap"><img src="/images/myrkwyrm.jpg" alt="Myrkwyrm specimen"></div>
+                <div class="card-label">
+                    <h3>MYRKWYRM</h3>
+                    <a href="/the-myrkwyrm-order.html" class="sdv-btn sdv-btn-small">VIEW_SPECIMEN</a>
+                </div>
+            </div>
+            <!-- CHEM-SOVEREIGN -->
+            <div class="sdv-card" data-order="chem-sovereign">
+                <div class="img-wrap"><img src="/images/chem-sovereign.jpg" alt="Chem-Sovereign specimen"></div>
+                <div class="card-label">
+                    <h3>CHEM-SOVEREIGN</h3>
+                    <a href="/the-chem-sovereign-order.html" class="sdv-btn sdv-btn-small">VIEW_SPECIMEN</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MORPHOLOGICAL ARTIFACTS -->
+    <section class="sdv-group sdv-reveal">
+        <h2 class="section-heading" style="color: #fff;">MORPHOLOGICAL_ARTIFACTS</h2>
+        <div class="artifacts-grid">
+            <div class="sdv-card"><img src="/images/artifact-1.jpg" alt="Artifact 1"></div>
+            <div class="sdv-card"><img src="/images/artifact-2.jpg" alt="Artifact 2"></div>
+            <div class="sdv-card"><img src="/images/artifact-3.jpg" alt="Artifact 3"></div>
+            <div class="sdv-card"><img src="/images/artifact-4.jpg" alt="Artifact 4"></div>
+        </div>
+        <div style="margin-top: 20px; text-align: right;">
+            <a href="/featured-art.html" class="sdv-btn">FULL_ARRAY_UPLINK</a>
+        </div>
+    </section>
+
+    <!-- THE ORDERS -->
+    <section class="sdv-group sdv-reveal" style="border-left: 2px solid #c5a059;">
+        <h2 class="section-heading section-heading-gold">// THE_SIX_ORDERS</h2>
+        <div style="font-size: 11px; line-height: 1.8; color: #d1d1e0;">
+            <p>The <strong>Scura Dragonverse</strong> archives six distinct orders of dragon-kind. Each order represents a biological lineage forged from elemental extremes.</p>
+        </div>
+    </section>
+
+    <!-- ACCESS BUTTONS -->
+    <section class="sdv-group sdv-reveal" style="border-top: 1px solid var(--bio-red);">
+        <h2 style="font-size: 13px; letter-spacing: 4px; color: #fff; margin: 0;">ARCHIVE_ACCESS</h2>
+        <div style="display: flex; align-items: center; gap: 20px; margin-top: 15px; flex-wrap: wrap;">
+            <a href="/scura-life-engine.html" class="sdv-btn" style="background: var(--bio-red); border: none; font-weight: bold;">INITIALIZE_ENGINE</a>
+            <a href="/scuradragonverse-engine.html" class="sdv-btn" style="border-color: #00d4ff;">MASTER_ENGINE</a>
+            <a href="/sdv-dragon-reality-engine.html" class="sdv-btn" style="border-color: #ff3e3e;">REALITY_ENGINE</a>
+            <a href="/scuradragonverse-updates.html" class="sdv-btn" style="border-color: #c5a059;">ARCHIVE_FEED</a>
+            <a href="/genesis-dossier.html" class="sdv-btn" style="border-color: #c5a059;">GENESIS</a>
+            <a href="/about-sdv.html" class="sdv-btn" style="border-color: #c5a059;">ABOUT</a>
+            <a href="/featured-art.html" class="sdv-btn">VISUAL_VAULT</a>
+            <a href="/sdv-pitch.html" class="sdv-btn" style="border-color: #00ff41;">PITCH</a>
+        </div>
+    </section>
+
+    <script>
+        (function() {
+            const obs = new IntersectionObserver((es) => {
+                es.forEach(e => { if (e.isIntersecting) e.target.classList.add('sdv-visible'); });
+            }, { threshold: 0.05 });
+            document.querySelectorAll('.sdv-reveal').forEach(el => obs.observe(el));
+        })();
+    </script>
+</div>
+
+</body>
+</html>
