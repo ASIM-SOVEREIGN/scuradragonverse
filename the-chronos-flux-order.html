@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Chronos-Flux Order | Scura Dragonverse</title>
+    <style>
+        .sdv-order-container {
+            --accent: #a349eb;
+            --glass: rgba(10, 5, 20, 0.92);
+            --faint-border: rgba(163, 73, 235, 0.15);
+            font-family: 'Courier New', monospace;
+            color: #fff;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 10;
+        }
+        .blueprint-header {
+            border: 1px solid var(--accent);
+            padding: 30px;
+            background: var(--glass);
+            margin-bottom: 30px;
+        }
+        .blueprint-header h1 {
+            letter-spacing: 8px;
+            margin: 0;
+            color: var(--accent);
+            text-transform: uppercase;
+        }
+        .diagnostic-line {
+            font-size: 10px;
+            border-top: 1px solid var(--faint-border);
+            margin-top: 15px;
+            padding-top: 8px;
+            color: var(--accent);
+            letter-spacing: 2px;
+            opacity: 0.7;
+        }
+        .upper-layout {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        .genomic-trace {
+            border-left: 3px solid var(--accent);
+            padding-left: 20px;
+        }
+        .genomic-heading {
+            color: var(--accent);
+            letter-spacing: 3px;
+            margin-top: 0;
+        }
+        .genomic-trace p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #d1d1e0;
+        }
+        .side-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .cell-box {
+            border: 1px solid var(--accent);
+            padding: 5px;
+            background: #000;
+            text-align: center;
+        }
+        .cell-box img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        .cell-box span {
+            font-size: 10px;
+            color: var(--accent);
+            font-weight: bold;
+            letter-spacing: 2px;
+            display: block;
+            margin: 5px 0;
+        }
+        .retract-btn {
+            border: 1px solid var(--accent);
+            padding: 12px;
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 10px;
+            text-align: center;
+            background: rgba(163, 73, 235, 0.05);
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+        .retract-btn:hover {
+            background: var(--accent);
+            color: #000;
+            box-shadow: 0 0 25px var(--accent);
+        }
+        .blueprint-divider {
+            display: flex;
+            align-items: center;
+            margin: 40px 0;
+            opacity: 0.4;
+        }
+        .div-line {
+            flex-grow: 1;
+            height: 1px;
+            background: var(--accent);
+        }
+        .div-hub {
+            width: 20px;
+            height: 20px;
+            border: 1px solid var(--accent);
+            border-radius: 50%;
+            margin: 0 20px;
+        }
+        .main-gallery-frame {
+            border: 1px solid var(--faint-border);
+            padding: 10px;
+            background: var(--glass);
+            margin-bottom: 40px;
+        }
+        .main-gallery-frame img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            display: block;
+        }
+        .sample-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        .sample-card {
+            border: 1px solid var(--faint-border);
+            padding: 15px;
+            background: var(--glass);
+            text-align: center;
+            transition: 0.4s;
+        }
+        .sample-card:hover {
+            border-color: var(--accent);
+            box-shadow: 0 0 35px rgba(163, 73, 235, 0.3);
+            transform: translateY(-5px);
+        }
+        .sample-img-wrap {
+            height: 260px;
+            overflow: hidden;
+            margin-bottom: 15px;
+            border: 1px solid #333;
+        }
+        .sample-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .sample-meta {
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 12px;
+            letter-spacing: 2px;
+        }
+        .sample-desc {
+            font-size: 10px;
+            color: rgba(209, 209, 224, 0.8);
+            margin-top: 10px;
+            font-style: italic;
+            line-height: 1.5;
+        }
+        @media (max-width: 768px) {
+            .upper-layout, .sample-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div id="chronos-flux-manifest" class="sdv-order-container">
+
+    <header class="blueprint-header">
+        <h1>THE CHRONOS-FLUX ORDER</h1>
+        <div class="diagnostic-line">DIAGNOSTIC: VOID FREQUENCY // LUMINANCE: 0.02% // STATUS: NAVIGATING DEPTHS</div>
+    </header>
+
+    <div class="upper-layout">
+        <div class="genomic-trace">
+            <h3 class="genomic-heading">[ NEURAL SHADOW-TRACE ]</h3>
+            <p>Chronos-Flux DNA utilizes dark-matter isotopes to achieve near-perfect stealth. Their cellular structure lacks traditional pigment, appearing as a localized rupture in the visual spectrum.</p>
+        </div>
+        <div class="side-stack">
+            <div class="cell-box">
+                <img src="/images/chronos-flux-cell.jpg" alt="The Cell">
+                <span>THE CELL</span>
+            </div>
+            <a href="/" class="retract-btn">← RETRACT TO MASTER CORE</a>
+        </div>
+    </div>
+
+    <div class="blueprint-divider">
+        <div class="div-line"></div>
+        <div class="div-hub"></div>
+        <div class="div-line"></div>
+    </div>
+
+    <div class="main-gallery-frame">
+        <img src="/images/chronos-flux-main.jpg" alt="Chronos-Flux Main">
+    </div>
+
+    <div class="sample-grid">
+        <div class="sample-card">
+            <div class="sample-img-wrap"><img src="/images/chronos-flux-void-born.jpg" alt="Void Born"></div>
+            <div class="sample-meta">[ CHRONOS_SAMPLE_01 // VOID_BORN ]</div>
+            <div class="sample-desc">"Specimen exists partially in the ethereal plane. Physical containment is difficult."</div>
+        </div>
+        <div class="sample-card">
+            <div class="sample-img-wrap"><img src="/images/chronos-flux-shadow-stride.jpg" alt="Shadow Stride"></div>
+            <div class="sample-meta">[ CHRONOS_SAMPLE_02 // SHADOW_STRIDE ]</div>
+            <div class="sample-desc">"Observed 'blinking' short distances instantly. Avoid direct eye contact."</div>
+        </div>
+        <div class="sample-card">
+            <div class="sample-img-wrap"><img src="/images/chronos-flux-abyssal-gaze.jpg" alt="Abyssal Gaze"></div>
+            <div class="sample-meta">[ CHRONOS_SAMPLE_03 // ABYSSAL_GAZE ]</div>
+            <div class="sample-desc">"Exudes a low-frequency hum that causes psychological distress in nearby fauna."</div>
+        </div>
+        <div class="sample-card">
+            <div class="sample-img-wrap"><img src="/images/chronos-flux-night-marrow.jpg" alt="Night Marrow"></div>
+            <div class="sample-meta">[ CHRONOS_SAMPLE_04 // NIGHT_MARROW ]</div>
+            <div class="sample-desc">"Absorbs 99.8% of local light. Appears as a silhouette even in high noon."</div>
+        </div>
+        <div class="sample-card">
+            <div class="sample-img-wrap"><img src="/images/chronos-flux-obsidian-wraith.jpg" alt="Obsidian Wraith"></div>
+            <div class="sample-meta">[ CHRONOS_SAMPLE_05 // OBSIDIAN_WRAITH ]</div>
+            <div class="sample-desc">"Wingspan creates localized eclipse events during low-altitude flight."</div>
+        </div>
+        <div class="sample-card">
+            <div class="sample-img-wrap"><img src="/images/chronos-flux-eclipse-fang.jpg" alt="Eclipse Fang"></div>
+            <div class="sample-meta">[ CHRONOS_SAMPLE_06 // ECLIPSE_FANG ]</div>
+            <div class="sample-desc">"Teeth coated in a neurotoxin that mimics total sensory deprivation."</div>
+        </div>
+        <div class="sample-card">
+            <div class="sample-img-wrap"><img src="/images/chronos-flux-umbra-scale.jpg" alt="Umbra Scale"></div>
+            <div class="sample-meta">[ CHRONOS_SAMPLE_07 // UMBRA_SCALE ]</div>
+            <div class="sample-desc">"Scales vibrate at frequencies that disrupt electronic surveillance."</div>
+        </div>
+        <div class="sample-card">
+            <div class="sample-img-wrap"><img src="/images/chronos-flux-singularity.jpg" alt="Singularity"></div>
+            <div class="sample-meta">[ CHRONOS_SAMPLE_08 // SINGULARITY ]</div>
+            <div class="sample-desc">"Apex predator of the Void. Observed consuming essence of fallen stars."</div>
+        </div>
+    </div>
+</div>
+
+<canvas id="chronos-void" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 1;"></canvas>
+<script>
+(function() {
+    const canvas = document.getElementById('chronos-void');
+    const ctx = canvas.getContext('2d');
+    let droplets = [];
+    function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+    class VoidDrop {
+        constructor() { this.init(); }
+        init() {
+            this.x = Math.random() * canvas.width;
+            this.y = -50;
+            this.size = Math.random() * 3 + 1;
+            this.speedY = Math.random() * 1.2 + 0.3;
+            this.opacity = Math.random() * 0.4;
+        }
+        update() { this.y += this.speedY; if (this.y > canvas.height) this.init(); }
+        draw() {
+            ctx.fillStyle = `rgba(163, 73, 235, ${this.opacity})`;
+            ctx.beginPath();
+            ctx.ellipse(this.x, this.y, this.size / 2, this.size * 2, 0, 0, Math.PI * 2);
+            ctx.fill();
+        }
+    }
+    window.addEventListener('resize', resize);
+    resize();
+    for(let i = 0; i < 25; i++) droplets.push(new VoidDrop());
+    function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        droplets.forEach(d => { d.update(); d.draw(); });
+        requestAnimationFrame(animate);
+    }
+    animate();
+})();
+</script>
+
+<!-- FOOTER -->
+<footer class="sdv-footer" style="text-align: center; padding: 40px 20px; border-top: 1px solid rgba(255,255,255,0.08); margin-top: 60px; font-family: 'Courier New', monospace;">
+    <div style="font-size: 12px; color: #a349eb; letter-spacing: 4px; margin-bottom: 10px;">
+        SCURA DRAGONVERSE™
+    </div>
+    <div style="font-size: 9px; color: #777; letter-spacing: 1px; margin-bottom: 15px;">
+        © 2026 Scura Dragonverse. All rights reserved.
+    </div>
+    <div style="font-size: 9px; color: #555; letter-spacing: 1px; margin-bottom: 15px;">
+        POWERED BY <a href="https://scuradimensions.com" style="color: #a349eb; text-decoration: none; border-bottom: 1px dotted #a349eb;">ASIM SOVEREIGN</a>
+    </div>
+    <div style="font-size: 8px; color: #444; letter-spacing: 2px; margin-bottom: 10px;">
+        BUILT BY SCURA // THE ARCHITECT
+    </div>
+    <div style="font-size: 8px; color: #333; letter-spacing: 1px;">
+        <a href="/terms-of-use.html" style="color: #555; text-decoration: none; margin: 0 10px;">TERMS</a>
+        <a href="/privacy-policy.html" style="color: #555; text-decoration: none; margin: 0 10px;">PRIVACY</a>
+        <a href="/about-sdv.html" style="color: #555; text-decoration: none; margin: 0 10px;">ABOUT</a>
+    </div>
+</footer>
+
+</body>
+</html>
