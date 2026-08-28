@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Titanborne Order | Scura Dragonverse</title>
+    <style>
+        .sdv-order-container {
+            --accent: #4ade80;
+            --glass: rgba(10, 20, 10, 0.95);
+            --faint-border: rgba(74, 222, 128, 0.2);
+            font-family: 'Courier New', monospace;
+            color: #fff;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 10;
+        }
+        .blueprint-header {
+            border: 1px solid var(--accent);
+            padding: 30px;
+            background: var(--glass);
+            margin-bottom: 30px;
+        }
+        .blueprint-header h1 {
+            letter-spacing: 8px;
+            margin: 0;
+            color: var(--accent);
+            text-transform: uppercase;
+        }
+        .diagnostic-line {
+            font-size: 10px;
+            border-top: 1px solid var(--faint-border);
+            margin-top: 15px;
+            padding-top: 8px;
+            color: var(--accent);
+            letter-spacing: 2px;
+            opacity: 0.7;
+        }
+        .upper-layout {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        .genomic-trace {
+            border-left: 3px solid var(--accent);
+            padding-left: 20px;
+        }
+        .genomic-heading {
+            color: var(--accent);
+            letter-spacing: 3px;
+            margin-top: 0;
+        }
+        .genomic-trace p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #d1d1e0;
+        }
+        .side-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .cell-box {
+            border: 1px solid var(--accent);
+            padding: 5px;
+            background: #000;
+            text-align: center;
+        }
+        .cell-box img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        .cell-box span {
+            font-size: 10px;
+            color: var(--accent);
+            font-weight: bold;
+            letter-spacing: 2px;
+            display: block;
+            margin: 5px 0;
+        }
+        .retract-btn {
+            border: 1px solid var(--accent);
+            padding: 12px;
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 10px;
+            text-align: center;
+            background: rgba(74, 222, 128, 0.05);
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+        .retract-btn:hover {
+            background: var(--accent);
+            color: #000;
+            box-shadow: 0 0 25px var(--accent);
+        }
+        .blueprint-divider {
+            display: flex;
+            align-items: center;
+            margin: 40px 0;
+            opacity: 0.4;
+        }
+        .div-line {
+            flex-grow: 1;
+            height: 1px;
+            background: var(--accent);
+        }
+        .div-hub {
+            width: 20px;
+            height: 20px;
+            border: 1px solid var(--accent);
+            border-radius: 50%;
+            margin: 0 20px;
+        }
+        .main-gallery-frame {
+            border: 1px solid var(--faint-border);
+            padding: 10px;
+            background: var(--glass);
+            margin-bottom: 40px;
+        }
+        .main-gallery-frame img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            display: block;
+        }
+        .sample-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        .sample-card {
+            border: 1px solid var(--faint-border);
+            padding: 15px;
+            background: var(--glass);
+            text-align: center;
+            transition: 0.4s;
+        }
+        .sample-card:hover {
+            border-color: var(--accent);
+            box-shadow: 0 0 35px rgba(74, 222, 128, 0.3);
+            transform: translateY(-5px);
+        }
+        .sample-img-wrap {
+            height: 260px;
+            overflow: hidden;
+            margin-bottom: 15px;
+            border: 1px solid #333;
+        }
+        .sample-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .sample-meta {
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 12px;
+            letter-spacing: 2px;
+        }
+        .sample-desc {
+            font-size: 10px;
+            color: rgba(209, 209, 224, 0.8);
+            margin-top: 10px;
+            font-style: italic;
+            line-height: 1.5;
+        }
+        @media (max-width: 768px) {
+            .upper-layout, .sample-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div id="titanborne-manifest" class="sdv-order-container">
+
+    <header class="blueprint-header">
+        <h1>THE TITANBORNE ORDER</h1>
+        <div class="diagnostic-line">SEISMIC RES: 8.4Hz // STATUS: ROOTED</div>
+    </header>
+
+    <div class="upper-layout">
+        <div class="genomic-trace">
+            <h3 class="genomic-heading">[ LITHIC GENOME ]</h3>
+            <p>Specimens are living continents. Their DNA strands are reinforced with carbon-nanotube lattices, allowing them to withstand the pressure of the planet's mantle.</p>
+        </div>
+        <div class="side-stack">
+            <div class="cell-box">
+                <img src="/images/titanborne-cell.jpg" alt="The Lithic Cell">
+                <span>THE LITHIC CELL</span>
+            </div>
+            <a href="/" class="retract-btn">← RETRACT TO MASTER CORE</a>
+        </div>
+    </div>
+
+    <div class="blueprint-divider">
+        <div class="div-line"></div>
+        <div class="div-hub"></div>
+        <div class="div-line"></div>
+    </div>
+
+    <div class="main-gallery-frame">
+        <img src="/images/titanborne-main.jpg" alt="Titanborne Main">
+    </div>
+
+    <div class="sample-grid">
+        <div class="sample-card">
+            <div class="sample-img-wrap"><img src="/images/titanborne-bedrock.jpg" alt="Bedrock"></div>
+            <div class="sample-meta">[ TITAN_SAMPLE_01 // BEDROCK ]</div>
+            <div class="sample-desc">"Skin density matches that of solid granite. Virtually immune to conventional ballistic fire."</div>
+        </div>
+        <div class="sample-card">
+            <div class="sample-img-wrap"><img src="/images/titanborne-strata.jpg" alt="Strata"></div>
+            <div class="sample-meta">[ TITAN_SAMPLE_02 // STRATA ]</div>
+            <div class="sample-desc">"Observed consuming raw ore deposits. Digestive system extracts minerals for scale reinforcement."</div>
+        </div>
+        <div class="sample-card">
+            <div class="sample-img-wrap"><img src="/images/titanborne-tectonic.jpg" alt="Tectonic"></div>
+            <div class="sample-meta">[ TITAN_SAMPLE_03 // TECTONIC ]</div>
+            <div class="sample-desc">"Movement triggers localized seismic activity. Can be tracked via USGS sensors."</div>
+        </div>
+        <div class="sample-card">
+            <div class="sample-img-wrap"><img src="/images/titanborne-ancient-core.jpg" alt="Ancient Core"></div>
+            <div class="sample-meta">[ TITAN_SAMPLE_04 // ANCIENT_CORE ]</div>
+            <div class="sample-desc">"Estimated age: 1.2 million years. Acts as a living archive of tectonic history."</div>
+        </div>
+        <div class="sample-card">
+            <div class="sample-img-wrap"><img src="/images/titanborne-mantle-born.jpg" alt="Mantle Born"></div>
+            <div class="sample-meta">[ TITAN_SAMPLE_05 // MANTLE_BORN ]</div>
+            <div class="sample-desc">"Capable of burrowing through solid rock at speeds of 30 knots."</div>
+        </div>
+        <div class="sample-card">
+            <div class="sample-img-wrap"><img src="/images/titanborne-lithic-king.jpg" alt="Lithic King"></div>
+            <div class="sample-meta">[ TITAN_SAMPLE_06 // LITHIC_KING ]</div>
+            <div class="sample-desc">"Apex of the Mountain Realm. Breath weapon is a high-pressure blast of gravel."</div>
+        </div>
+        <div class="sample-card">
+            <div class="sample-img-wrap"><img src="/images/titanborne-seismic-wave.jpg" alt="Seismic Wave"></div>
+            <div class="sample-meta">[ TITAN_SAMPLE_07 // SEISMIC_WAVE ]</div>
+            <div class="sample-desc">"Wings generate concussive shockwaves that can level entire forests."</div>
+        </div>
+        <div class="sample-card">
+            <div class="sample-img-wrap"><img src="/images/titanborne-primeval.jpg" alt="Primeval"></div>
+            <div class="sample-meta">[ TITAN_SAMPLE_08 // PRIMEVAL ]</div>
+            <div class="sample-desc">"The foundational ancestor of the order. Exists in a state of permanent slumber."</div>
+        </div>
+    </div>
+</div>
+
+<canvas id="lithic-particles" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: -1;"></canvas>
+<script>
+(function() {
+    const canvas = document.getElementById('lithic-particles');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    let chunks = [];
+
+    function resize() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    }
+
+    class RockChunk {
+        constructor() { this.init(); }
+        init() {
+            this.x = Math.random() * canvas.width;
+            this.y = -20;
+            this.size = Math.random() * 6 + 2;
+            this.speedY = Math.random() * 1 + 0.5;
+            this.speedX = (Math.random() - 0.5) * 0.5;
+            this.rotation = Math.random() * Math.PI * 2;
+            this.rotationSpeed = (Math.random() - 0.5) * 0.02;
+            this.opacity = Math.random() * 0.3 + 0.1;
+            const colors = ['#4ade80', '#2d5a3c', '#5d4037', '#78909c'];
+            this.color = colors[Math.floor(Math.random() * colors.length)];
+        }
+        update() {
+            this.y += this.speedY;
+            this.x += this.speedX;
+            this.rotation += this.rotationSpeed;
+            if (this.y > canvas.height + 20) this.init();
+        }
+        draw() {
+            ctx.save();
+            ctx.translate(this.x, this.y);
+            ctx.rotate(this.rotation);
+            ctx.globalAlpha = this.opacity;
+            ctx.fillStyle = this.color;
+            ctx.beginPath();
+            ctx.moveTo(0, -this.size);
+            ctx.lineTo(this.size, -this.size/2);
+            ctx.lineTo(this.size/2, this.size);
+            ctx.lineTo(-this.size, this.size/3);
+            ctx.closePath();
+            ctx.fill();
+            ctx.restore();
+        }
+    }
+
+    window.addEventListener('resize', resize);
+    resize();
+
+    for(let i = 0; i < 40; i++) chunks.push(new RockChunk());
+
+    function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        chunks.forEach(c => {
+            c.update();
+            c.draw();
+        });
+        requestAnimationFrame(animate);
+    }
+    animate();
+})();
+</script>
+
+</body>
+</html>
